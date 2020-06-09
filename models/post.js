@@ -4,8 +4,6 @@ module.exports = (sequelize, DataTypes) => {
     posted_at: DataTypes.DATE,
     img_url: DataTypes.STRING(400),
     fb_url: DataTypes.STRING(400)
-  }, {
-    timestamps: false
   });
   Post.associate = function (models) {
     // associations can be defined here
