@@ -4,6 +4,6 @@ const postsController = require("../controllers").posts;
 
 router.get("/", postsController.getAll);
 router.get("/latest", postsController.getLatest);
-router.post("/add", postsController.add);
+router.post("/", postsController.add);
 
 module.exports = router;
