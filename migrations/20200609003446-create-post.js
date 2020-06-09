@@ -9,15 +9,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       posted_at: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DATE,
         allowNull: false
       },
       img_url: {
-        type: Sequelize.TEXT,
+        type: Sequelize.STRING(400),
         allowNull: false
       },
       fb_url: {
-        type: Sequelize.TEXT,
+        type: Sequelize.STRING(400),
         allowNull: false
       }
     });

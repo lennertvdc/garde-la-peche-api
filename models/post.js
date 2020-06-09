@@ -1,9 +1,9 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Post = sequelize.define('Post', {
-    posted_at: DataTypes.Integer,
-    img_url: DataTypes.TEXT,
-    fb_url: DataTypes.TEXT
+    posted_at: DataTypes.DATE,
+    img_url: DataTypes.STRING(400),
+    fb_url: DataTypes.STRING(400)
   }, {
     timestamps: false
   });
