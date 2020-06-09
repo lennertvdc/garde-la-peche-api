@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const post = require("./post");
-const webhook = require("./webhook");
+const posts = require("./posts");
+const webhooks = require("./webhooks");
 
-router.use("/post", post);
-router.use("/webhook", webhook);
+router.use("/posts", posts);
+router.use("/webhooks", webhooks);
 
 router.get("/", (req, res) => {
     res.status(200).json({message: "Connected!"});

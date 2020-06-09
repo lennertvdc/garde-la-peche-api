@@ -1,7 +1,7 @@
-const post = require("./post");
-const webhook = require("./webhook");
+const posts = require("./posts");
+const webhooks = require("./webhooks");
 
 module.exports = {
-    post: post,
-    webhook: webhook
+    posts: posts,
+    webhooks: webhooks
 }
