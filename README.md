@@ -17,7 +17,7 @@ Use code below to create mysql user. Change `user`, `password` and `database_nam
 Note: If database name exist out of more then one word, use `_` instead of `-`. Otherwise you will get a error. Also you don't need to create the database sequelize will do it for you.
 ```SQL
 CREATE USER 'user'@'%' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON database_name.* TO 'user'@'localhost';
+GRANT ALL PRIVILEGES ON database_name.* TO 'user'@'%';
 ```
 
 ### Edit .env file
