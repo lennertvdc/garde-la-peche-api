@@ -1,9 +1,9 @@
 require("dotenv").config();
 const express = require("express");
-const server = express();
-const routes = require("./routes");
+const app = express();
+const routes = require("./app/routes");
 
-server.use("/api", routes);
+app.use("/api", routes);
 
 const port = process.env.PORT || 3000;
-server.listen(port, () => console.log(`Server is up and listening on port ${port}`));
+app.listen(port, () => console.log(`Server is up and listening on port ${port}`));
