@@ -9,6 +9,10 @@
     "setup-db": "npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
   },
   "author": "Lennert Vandecasteele",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lennertvdc/garde-la-peche-api.git"
+  },
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
