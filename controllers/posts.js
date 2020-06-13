@@ -1,4 +1,5 @@
 const Post = require("../models").Post;
+const webhooksJob = require("../jobs/webhooks");
 
 async function getAll(req, res) {
     try {
@@ -36,6 +37,9 @@ async function add(req, res) {
             img_url: req.body.img_url,
             fb_url: req.body.fb_url
         });
+
+        console.log("Sending post to all webhooks");
+        await webhooksJob.send(post);
 
         res.status(201).send(post);
     } catch (error) {
