@@ -1,19 +1,5 @@
 const axios = require("axios");
-const fs = require("fs");
-const FormData = require("form-data");
 const webhooksConfig = require("../config/webhooks.config");
-
-// const url = "https://discordapp.com/api/webhooks/719348401338056735/nSSTUdqyKsJTmIozO3jsRaJKzMeO2rUsG30zvbjeINty59cAG88T0KLcP7GN_7RRcqXk";
-
-// let msg = new FormData();
-// msg.append("content", "This a test")
-// msg.append("file", fs.createReadStream("./image.png"))
-
-
-
-// msg.submit(url, (err, res) => {
-//     res.resume();
-// })
 
 async function send(post) {
     let msg = {
@@ -26,10 +12,13 @@ async function send(post) {
 }
 
 function getPostEmbed(post) {
+    const date = new Date(post.posted_at).toUTCString()
     return [{
-        "title": "New post",
+        "title": "**UPDATE** | New post",
         "type": "image",
-        "timestamp": new Date(post.posted_at).toISOString(),
+        "description": `New image posted at: ${date}`,
+        "color": 15354699,
+        "url": post.fb_url,
         "image": {
             "url": post.img_url
         }
@@ -63,14 +52,6 @@ async function getAllWebhooks() {
         console.log(error);
     }
 }
-
-const post = {
-    "id": 1,
-    "posted_at": "2016-03-18T12:59:00.000Z",
-    "img_url": "https://scontent.fbru1-1.fna.fbcdn.net/v/t1.0-9/1931113_10206876102719802_607116194129647729_n.jpg?_nc_cat=100&_nc_sid=ca434c&_nc_ohc=mF5llbaojSgAX_CEYAO&_nc_ht=scontent.fbru1-1.fna&oh=6fc0744597d18d81a438425ac9e8be53&oe=5EFEF7F4",
-    "fb_url": "https://www.facebook.com/photo.php?fbid=10206876102719802&set=g.956842611031123&type=1&theater&ifg=1"
-}
-send(post);
 
 module.exports = {
     send
