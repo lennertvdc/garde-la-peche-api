@@ -39,7 +39,11 @@ async function sendToWebhook(webhookUrl, msg) {
             headers: webhooksConfig.headers
         });
     } catch (error) {
-        console.log(error);
+        const response = error.response;
+        if(response.status === 429) {
+            const retry_after = response.data.retry_after;
+            setTimeout(async () => await sendToWebhook(webhookUrl, msg), retry_after);
+        }
     }
 }
 
