@@ -1,7 +1,5 @@
-const posts = require("./posts");
-const webhooks = require("./webhooks");
+const images = require('./images');
 
 module.exports = {
-    posts: posts,
-    webhooks: webhooks
+    images
 }

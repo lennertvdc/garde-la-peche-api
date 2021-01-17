@@ -1,12 +1,10 @@
-const router = require("express").Router();
-const posts = require("./posts");
-const webhooks = require("./webhooks");
+const router = require('express').Router();
+const images = require('./images');
 
-router.use("/posts", posts);
-router.use("/webhooks", webhooks);
+router.use('/images', images)
 
 router.get("/", (req, res) => {
-    res.status(200).json({message: "Connected!"});
+    res.status(200).json({message: 'Connected!'});
 });
 
 module.exports = router;
