@@ -45,7 +45,7 @@ User's password to connect to mysql, that you defined when you created the `mysq
 ```
 npm run setup-db
 ```
-This will `create the database`. Then it will `migrate all the tables`. Finally it will `seed the oldest post data` into the posts table.
+This will `create the database`. Then it will `migrate all the tables`.
 
 ## Running the server
 
@@ -63,9 +63,9 @@ npm run dev
 The following routes are set up, and will return JSON data:
 
 **Posts**
-* **GET** all posts: `/api/posts`
-* **GET** latest post: `/api/posts/latest`
-* **POST** new post: `/api/posts`
+* **GET** all images: `/api/images`
+* **GET** latest post: `/api/images/latest`
+* **POST** new post: `/api/images`
 
 **Webhooks**
 * **GET** all webhooks: `/api/webhooks`
