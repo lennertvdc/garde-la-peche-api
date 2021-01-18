@@ -32,19 +32,17 @@ async function getLatest(req, res) {
 async function add(req, res) {
     try {
         const body = req.body;
-        let images = [];
-        for (let i = 0; i < body.length; i++) {
-            const imgReq = await image.create({
-                fb_id: body[i].fbId,
-                fb_url: body[i].fbUrl,
-                img_url: body[i].imgUrl,
-                img_base64: body[i].imgBase64
-            });
-            console.log(body[i].fbId);
-            images.push(imgReq);
-        }
 
-        res.status(201).send(images);
+        const imgReq = await image.create({
+            fb_id: body.fbId,
+            fb_url: body.fbUrl,
+            img_url: body.imgUrl,
+            img_base64: body.imgBase64
+        });
+
+        //TODO Send img to discord bot
+
+        res.status(201).send(imgReq);
     } catch (error) {
         if (process.env.NODE_ENV === 'production') {
             res.status(400).json({error: 'Could not create image(s).'})
