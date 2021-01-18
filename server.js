@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const routes = require("./routes");
 
 //Set up body-parser with JSON
-server.use(bodyParser.json());
+server.use(bodyParser.json({limit: '1000mb'}));
 
 server.use("/api", routes);
 

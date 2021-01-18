@@ -19,7 +19,7 @@ module.exports = {
         type: Sequelize.STRING(400)
       },
       img_base64: {
-        type: Sequelize.TEXT,
+        type: Sequelize.TEXT('long'),
         allowNull: false
       },
       createdAt: {
